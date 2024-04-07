@@ -29,7 +29,6 @@ def caesar_cipher(text):
     # Return the final encrypted or decrypted message.
     return result
 
-# Example usage:
 # Prompt the user for the text.
 text = input("Please enter a sentence: ")
 
