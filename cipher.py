@@ -29,6 +29,7 @@ def caesar_cipher(text):
             # If the original character was uppercase, convert the shifted character to uppercase to preserve case.
             if char.isupper():
                 encrypted_char = encrypted_char.upper()
+            
             result += encrypted_char
         else:
             # If the character is not a letter, add it to the result without shifting.
