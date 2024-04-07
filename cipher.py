@@ -19,7 +19,6 @@ def caesar_cipher(text):
             new_position = (position + shift) % 26
             # Encrypt for each character in the input text.
             encrypted_char = alphabet[new_position]
-            
             # If the original character was uppercase, convert the shifted character to uppercase.
             if char.isupper():
                 result += encrypted_char.upper()
