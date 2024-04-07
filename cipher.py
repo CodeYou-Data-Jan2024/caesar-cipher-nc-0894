@@ -10,18 +10,22 @@ def caesar_cipher(text):
     
     # Iterate over each character in the input text. This loop goes through each character (char) in the text string one by one.
     for char in text:
+        
         # Check if the current character, converted to lowercase, is in the alphabet string. This is to ensure we only try to shift letters and ignore other characters (like punctuation).
         if char.lower() in alphabet:
             # Find the current position of the character in the alphabet.
             position = alphabet.find(char.lower())
             # Calculate the new position of the character by adding the shift value to its original position. The % 26 ensures that the new position wraps around if it goes beyond the alphabet length.
             new_position = (position + shift) % 26
+            # Encrypt for each character in the input text.
+            encrypted_char = alphabet[new_position]
+            
             # If the original character was uppercase, convert the shifted character to uppercase.
             if char.isupper():
-                result += alphabet[new_position].upper()
+                result += encrypted_char.upper()
             else:
-                # Otherwise, keep it lowercase.
-                result += alphabet[new_position]
+                # Otherwise, keep it the same case.
+                result += encrypted_char
         else:
             # If the character is not a letter, add it to the result without shifting.
             result += char
