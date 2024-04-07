@@ -12,7 +12,7 @@ def caesar_cipher(text, shift, direction):
     - str: The encrypted (encoded) or decrypted (decoded) message.
     """
     # Initialize the empty string. This will be used to accumulate the encoded or decoded characters.
-    result = ""
+    result = " "
     # Define the alphabet used for the cipher.
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     
@@ -22,7 +22,7 @@ def caesar_cipher(text, shift, direction):
         if char.lower() in alphabet:
             # Find the current position of the character in the alphabet.
             position = alphabet.find(char.lower())
-            # Shift the character's position based on the direction.
+            # Shift the character's position based on the direction provided. Either "encode" or "decode".
             if direction == 'encode':
                 # For encoding, shift forward by 'shift' positions. The % 26 ensures that the new position wraps around if it goes beyond the alphabet length.
                 new_position = (position + shift) % 26
